@@ -4,3 +4,4 @@ scipy
 sphinx
 sphinx_design
 sphinx_copybutton
+pydata-sphinx-theme
