@@ -38,7 +38,7 @@ jobs:
       # More info on options: https://github.com/marketplace/actions/setup-micromamba
       - uses: mamba-org/setup-micromamba@v2
         with:
-          environment-file: devtools/conda-envs/test_env.yaml
+          environment-file: montecarloPackage/devtools/conda-envs/test_env.yaml
           environment-name: test
           condarc: |
             channels:
