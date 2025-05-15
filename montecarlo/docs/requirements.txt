@@ -6,3 +6,5 @@ sphinx_copybutton
 pydata-sphinx-theme
 sphinx>=6.0
 sphinx-autodoc-typehints
+# and anything else you're using
+
