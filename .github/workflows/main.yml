@@ -47,16 +47,23 @@ jobs:
             python=${{ matrix.python-version }}
 
       - name: Install package
-        # conda setup requires this special shell
         shell: bash -l {0}
         run: |
-          python -m pip install . --no-deps
+          pip install -e .
           micromamba list
+
+      - name: Debug Directory Structure
+        shell: bash
+        run: |
+          echo "Root directory:"
+          ls -R $GITHUB_WORKSPACE
+          echo "montecarloPackage directory:"
+          ls -R $GITHUB_WORKSPACE/montecarloPackage
           
       - name: Set PYTHONPATH (Hardcoded)
         shell: bash -l {0}
         run: |
-          export PYTHONPATH=$PYTHONPATH:/home/runner/work/QS1/QS1/montecarloPackage
+          export PYTHONPATH=$GITHUB_WORKSPACE/montecarloPackage:$PYTHONPATH
           echo "PYTHONPATH is: $PYTHONPATH"
           
       - name: Verify package import
