@@ -57,7 +57,7 @@ jobs:
         # conda setup requires this special shell
         shell: bash -l {0}
         run: |
-          pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarlo/tests/
+          pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarloPackage/montecarlo/tests/test_montecarlo.py
 
       - name: CodeCov
         uses: codecov/codecov-action@v5
