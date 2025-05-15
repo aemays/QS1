@@ -56,7 +56,7 @@ jobs:
       - name: Set PYTHONPATH
         shell: bash -l {0}
         run: |
-          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE
+          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/montecarlopackage
           echo "PYTHONPATH set to $PYTHONPATH"
           
       - name: Verify package import
@@ -71,11 +71,15 @@ jobs:
         run: |
           echo "PYTHONPATH is: $PYTHONPATH"
           pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarloPackage/montecarlo/tests/test_montecarlo.py     
-      - name: Run tests
-        # conda setup requires this special shell
-        shell: bash -l {0}
+
+      - name: Debug: List Files
+        shell: bash
         run: |
-          pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarloPackage/montecarlo/tests/test_montecarlo.py
+          echo "Listing root directory:"
+          ls -R $GITHUB_WORKSPACE
+          echo "Listing montecarloPackage directory:"
+          ls -R $GITHUB_WORKSPACE/montecarloPackage
+        
 
       - name: CodeCov
         uses: codecov/codecov-action@v5
