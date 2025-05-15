@@ -53,11 +53,11 @@ jobs:
           python -m pip install . --no-deps
           micromamba list
           
-      - name: Set PYTHONPATH
+      - name: Set PYTHONPATH (Hardcoded)
         shell: bash -l {0}
         run: |
-          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/montecarloPackage
-          echo "PYTHONPATH set to $PYTHONPATH"
+          export PYTHONPATH=$PYTHONPATH:/home/runner/work/QS1/QS1/montecarloPackage
+          echo "PYTHONPATH is: $PYTHONPATH"
           
       - name: Verify package import
         shell: bash -l {0}
