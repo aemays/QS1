@@ -72,7 +72,7 @@ jobs:
           echo "PYTHONPATH is: $PYTHONPATH"
           pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarloPackage/montecarlo/tests/test_montecarlo.py     
 
-      - name: Debug: List Files
+      - name: Debug:List Files
         shell: bash
         run: |
           echo "Listing root directory:"
