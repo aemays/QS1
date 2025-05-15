@@ -56,9 +56,21 @@ jobs:
       - name: Set PYTHONPATH
         shell: bash -l {0}
         run: |
-          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/montecarloPackage
+          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE
           echo "PYTHONPATH set to $PYTHONPATH"
           
+      - name: Verify package import
+        shell: bash -l {0}
+        run: |
+          echo "PYTHONPATH is: $PYTHONPATH"
+          ls -R $GITHUB_WORKSPACE/montecarloPackage
+          python -c "import montecarlo" || exit 1   
+          
+      - name: Run tests
+        shell: bash -l {0}
+        run: |
+          echo "PYTHONPATH is: $PYTHONPATH"
+          pytest -v --cov=montecarlo --cov-report=xml --color=yes montecarloPackage/montecarlo/tests/test_montecarlo.py     
       - name: Run tests
         # conda setup requires this special shell
         shell: bash -l {0}
