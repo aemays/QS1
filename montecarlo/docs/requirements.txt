@@ -1,7 +1,7 @@
 numpy
 matplotlib
 scipy
-sphinx_design
+sphinx-design
 sphinx_copybutton
 pydata-sphinx-theme
 sphinx>=6.0
