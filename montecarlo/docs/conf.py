@@ -15,7 +15,7 @@
 # Incase the project was not installed
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../montecarlo'))
 
 # Ensure the 'montecarlo' module is in the Python path
 #import montecarlo
