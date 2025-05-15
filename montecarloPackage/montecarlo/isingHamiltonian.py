@@ -102,9 +102,9 @@ class IsingHamiltonian:
 
         for meow in range(2**N):
             self.bs.set_integer_config(meow)
-            P = math.e**(-B * self.bs.energy())/Z
-            E += self.bs.energy()*P
-            EE += self.bs.energy()**2*P
+            P = math.e**(-B * self.bs.self.energy())/Z
+            E += self.bs.self.energy()*P
+            EE += self.bs.self.energy()**2*P
 
 
             shawarma = 0

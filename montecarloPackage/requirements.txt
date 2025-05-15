@@ -1,0 +1,6 @@
+numpy
+matplotlib
+networkx
+sphinx
+sphinx_rtd_theme
+
