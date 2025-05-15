@@ -1,14 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='montecarlo',
-    version='0.1.0',
-    description='A Python package for Monte Carlo simulations.',
-    author='Anthony Mays',
-    packages=find_packages(),  # <– Automatically finds 'montecarlo'
+    name="montecarlo",
+    version="0.1.0",
+    packages=find_packages(),
     install_requires=[
-        'numpy',
-        'matplotlib',
-        'scipy',
+        # Add your dependencies here
     ],
+    extras_require={
+        "dev": ["pytest", "pytest-cov", "codecov"],
+    },
 )
