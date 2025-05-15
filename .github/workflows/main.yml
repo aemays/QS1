@@ -56,7 +56,7 @@ jobs:
       - name: Set PYTHONPATH
         shell: bash -l {0}
         run: |
-          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/montecarlopackage
+          export PYTHONPATH=$PYTHONPATH:$GITHUB_WORKSPACE/montecarloPackage
           echo "PYTHONPATH set to $PYTHONPATH"
           
       - name: Verify package import
