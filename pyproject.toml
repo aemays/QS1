@@ -1,13 +1,16 @@
 [tool.poetry]
 name = "montecarlo"
 version = "0.1.0"
+packages = [
+    {include = "montecarloPackage/montecarlo"}
+]
 description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^7.0"
 pytest-cov = "^4.0"
 codecov = "^2.0"
