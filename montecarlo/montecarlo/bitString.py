@@ -1,7 +1,7 @@
 # Ensure numpy is imported correctly
 import numpy as np
 import math
-#import copy as cp
+import copy as cp
 class BitString:
     
     """Simple class to implement a config of bits"""
